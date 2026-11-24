@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var message_log: RichTextLabel = $Root/BottomBar/HBoxContainer/MessageLog
+@onready var message_log: RichTextLabel = $Control/BottomBar/HBoxContainer/MessageLog
 
 func _ready() -> void:
 	message_log.scroll_following = true
