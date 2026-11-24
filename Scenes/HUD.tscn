@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://uahjryxglpap"]
+
+[ext_resource type="Script" uid="uid://cm6clpko275in" path="res://Scenes/HUD.gd" id="1_sd512"]
+
+[node name="HUD" type="CanvasLayer" unique_id=24698377]
+script = ExtResource("1_sd512")
+
+[node name="Control" type="Control" parent="." unique_id=87121928]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BottomBar" type="PanelContainer" parent="Control" unique_id=1761023862]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/BottomBar" unique_id=396991721]
+layout_mode = 2
+
+[node name="MessageLog" type="RichTextLabel" parent="Control/BottomBar/HBoxContainer" unique_id=1604827969]
+layout_mode = 2
+
+[node name="ActionSlot" type="Button" parent="Control/BottomBar/HBoxContainer" unique_id=1458381179]
+layout_mode = 2
+
+[node name="StatsBox" type="VBoxContainer" parent="Control/BottomBar/HBoxContainer" unique_id=293105787]
+layout_mode = 2

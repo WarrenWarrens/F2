@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://c0whm4y5kwx15"
+path="res://.godot/imported/WorldOne.map-b10cc1a1f12360950993e6217d94cd08.tres"
+
+[deps]
+
+source_file="res://Levels/WorldOne.map"
+dest_files=["res://.godot/imported/WorldOne.map-b10cc1a1f12360950993e6217d94cd08.tres"]
+
+[params]
+

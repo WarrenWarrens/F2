@@ -37,24 +37,9 @@ func _on_fullscreen_toggled(toggled_on: bool) -> void:
 
 
 func _on_test_level_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Levels/TestLevelTwo.tscn")
+	get_tree().change_scene_to_file("res://Scenes/World.tscn")
 
 
-
-func _on_level_one_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Levels/TestLevelOne.tscn")
-
-
-func _on_level_two_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Levels/inside.tscn")
-
-
-	pass # Replace with function body.
-
-
-func _on_level_three_button_pressed() -> void:
-	pass
-	#get_tree().change_scene_to_file("res://Levels/LevelThree.tscn")
 
 
 func _on_back_button_pressed() -> void:

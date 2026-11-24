@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b6l8yw8hdxt3g"]
+
+[ext_resource type="Script" uid="uid://bo7nljyb2gmry" path="res://Scenes/Player.gd" id="1_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://pqwtvgkfjm7c" path="res://Assets/Art/Claw/ECLFA0.png" id="1_rpqav"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kyqiw"]
+radius = 0.3
+
+[node name="Player" type="CharacterBody3D" unique_id=671069631]
+collision_layer = 2
+script = ExtResource("1_kyqiw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1881476617]
+shape = SubResource("SphereShape3D_kyqiw")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=501903759]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=360554001]
+billboard = 2
+shaded = true
+texture_filter = 0
+texture = ExtResource("1_rpqav")
