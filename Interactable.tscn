@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dnu0funpy2mfp"]
+
+[ext_resource type="Texture2D" uid="uid://cotdfbuyrlqc" path="res://Assets/Art/Knife/KNFPA0.png" id="1_msfch"]
+[ext_resource type="Script" uid="uid://dbg7w1bje05up" path="res://Interactable.gd" id="1_ojdgt"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ttpud"]
+
+[node name="Interactable" type="StaticBody3D" unique_id=894259066]
+collision_layer = 4
+script = ExtResource("1_ojdgt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=504092442]
+shape = SubResource("SphereShape3D_ttpud")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=461091698]
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_msfch")

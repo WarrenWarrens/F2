@@ -29,6 +29,8 @@ layout_mode = 2
 
 [node name="MessageLog" type="RichTextLabel" parent="Control/BottomBar/HBoxContainer" unique_id=1604827969]
 layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
 
 [node name="ActionSlot" type="Button" parent="Control/BottomBar/HBoxContainer" unique_id=1458381179]
 layout_mode = 2
