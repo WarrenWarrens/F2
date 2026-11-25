@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b6l8yw8hdxt3g"]
 
 [ext_resource type="Script" uid="uid://bo7nljyb2gmry" path="res://Scenes/Player.gd" id="1_kyqiw"]
-[ext_resource type="Texture2D" uid="uid://pqwtvgkfjm7c" path="res://Assets/Art/Claw/ECLFA0.png" id="1_rpqav"]
+[ext_resource type="Texture2D" uid="uid://5hd6epvu7pkg" path="res://Assets/Art/Models/Sprite-0007.png" id="2_kyqiw"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kyqiw"]
 radius = 1.318
@@ -23,4 +23,4 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.795, 0)
 billboard = 2
 shaded = true
 texture_filter = 0
-texture = ExtResource("1_rpqav")
+texture = ExtResource("2_kyqiw")
