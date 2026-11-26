@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://dexbp4senl0yu"]
+
+[ext_resource type="FontFile" uid="uid://baysvsat8me5a" path="res://Assets/Font/Angel wish.ttf" id="1_xcxgj"]
+
+[resource]
+default_font = ExtResource("1_xcxgj")
+default_font_size = 42
