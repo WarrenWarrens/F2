@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://5hd6epvu7pkg" path="res://Assets/Art/Models/Sprite-0007.png" id="2_kyqiw"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kyqiw"]
-radius = 1.318
+radius = 1.408
 
 [node name="Player" type="CharacterBody3D" unique_id=671069631]
 collision_layer = 2
@@ -19,8 +19,11 @@ shape = SubResource("SphereShape3D_kyqiw")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=501903759]
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=360554001]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.795, 0)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.3076184, 0)
 billboard = 2
 shaded = true
 texture_filter = 0
 texture = ExtResource("2_kyqiw")
+
+[node name="FirstPersonCamera" type="Camera3D" parent="." unique_id=515031256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3299549, 0)

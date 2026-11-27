@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @export var walk_speed: float = 3.5
 @export var run_speed: float = 6.5
+var last_sector: int = -1
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 
@@ -9,6 +10,8 @@ var current_speed: float = 3.5
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var pending_target: Node3D = null
 var hud_ref: CanvasLayer = null
+@onready var sprite: Sprite3D = $Sprite3D
+var facing_dir: Vector3 = Vector3.BACK
 
 func _ready() -> void:
 	nav_agent.path_desired_distance = 0.5
@@ -21,7 +24,7 @@ func move_to(target_pos: Vector3, run: bool = false) -> void:
 	pending_target = null
 	current_speed = run_speed if run else walk_speed
 	nav_agent.target_position = target_pos
-	print("Target: ", target_pos, " | Reachable: ", nav_agent.is_target_reachable(), " | Finished: ", nav_agent.is_navigation_finished())
+	#print("Target: ", target_pos, " | Reachable: ", nav_agent.is_target_reachable(), " | Finished: ", nav_agent.is_navigation_finished())
 
 func interact_with(target: Node3D, hud: CanvasLayer, run: bool = false) -> void:
 	pending_target = target
@@ -35,7 +38,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.y = 0.0
 
-	# Check if we arrived at an interactable object
 	if pending_target:
 		var flat_dist := Vector2(global_position.x, global_position.z).distance_to(
 			Vector2(pending_target.global_position.x, pending_target.global_position.z)
@@ -44,7 +46,7 @@ func _physics_process(delta: float) -> void:
 			if hud_ref:
 				hud_ref.log_message(pending_target.interact_message)
 			pending_target = null
-			nav_agent.target_position = global_position # Stop walking
+			nav_agent.target_position = global_position 
 			velocity.x = 0.0
 			velocity.z = 0.0
 			move_and_slide()
@@ -61,12 +63,48 @@ func _physics_process(delta: float) -> void:
 	direction.y = 0.0
 
 	if direction.length_squared() > 0.001:
-		var horizontal := direction.normalized() * current_speed
+		facing_dir = direction.normalized()
+		var horizontal := facing_dir * current_speed
 		velocity.x = horizontal.x
 		velocity.z = horizontal.z
 	else:
 		velocity.x = 0.0
 		velocity.z = 0.0
+		
 
-	#print("Pos: ", global_position, " | Next: ", next_pos, " | Vel: ", velocity, " | PathPts: ", nav_agent.get_current_navigation_path().size())
+	_update_sprite_direction()
 	move_and_slide()
+	
+func _update_sprite_direction() -> void:
+	var cam := get_viewport().get_camera_3d()
+	if not cam:
+		return
+
+	var cam_right := cam.global_basis.x
+	cam_right.y = 0.0
+	cam_right = cam_right.normalized()
+
+	var cam_forward := -cam.global_basis.z
+	cam_forward.y = 0.0
+	cam_forward = cam_forward.normalized()
+
+	var x := facing_dir.dot(cam_right)
+	var y := facing_dir.dot(cam_forward)
+	var angle := atan2(y, x)
+
+	var sector := wrapi(int(round(angle / (PI / 4.0))), 0, 8)
+	if sector != last_sector:
+		last_sector = sector
+		var dir_names := ["RIGHT", "RIGHT BACK", "BACK (away)","BACK LEFT", "LEFT", "FRONT LEFT", "FRONT (toward)", "FRONT RIGHT"]
+		print("Facing: ", dir_names[sector])
+
+	if sprite.vframes >= 4:
+		match sector:
+			0: sprite.frame_coords.y = 1 
+			1: sprite.frame_coords.y = 2 
+			2: sprite.frame_coords.y = 3 
+			3: sprite.frame_coords.y = 4
+			4: sprite.frame_coords.y = 5 
+			5: sprite.frame_coords.y = 6 
+			6: sprite.frame_coords.y = 7
+			7: sprite.frame_coords.y = 8 

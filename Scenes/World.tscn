@@ -186,7 +186,7 @@ projection = 1
 size = 25.615
 
 [node name="Player" parent="." unique_id=671069631 instance=ExtResource("7_q2d71")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8566763, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 3.8566763, 0)
 
 [node name="HUD" parent="." unique_id=24698377 instance=ExtResource("8_uo7di")]
 
