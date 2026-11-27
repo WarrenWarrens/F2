@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b6l8yw8hdxt3g"]
 
-[ext_resource type="Script" uid="uid://bo7nljyb2gmry" path="res://Scenes/Player.gd" id="1_kyqiw"]
+[ext_resource type="Script" uid="uid://bo7nljyb2gmry" path="res://Scripts/Player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://5hd6epvu7pkg" path="res://Assets/Art/Models/Sprite-0007.png" id="2_kyqiw"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kyqiw"]

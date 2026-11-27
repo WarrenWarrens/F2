@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dnu0funpy2mfp"]
 
 [ext_resource type="Texture2D" uid="uid://cotdfbuyrlqc" path="res://Assets/Art/Knife/KNFPA0.png" id="1_msfch"]
-[ext_resource type="Script" uid="uid://dbg7w1bje05up" path="res://Interactable.gd" id="1_ojdgt"]
+[ext_resource type="Script" uid="uid://dbg7w1bje05up" path="res://Scripts/Interactable.gd" id="1_ojdgt"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ttpud"]
 

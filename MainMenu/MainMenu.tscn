@@ -9,16 +9,16 @@
 shader = ExtResource("2_cruaa")
 shader_parameter/polar_coordinates = false
 shader_parameter/polar_center = Vector2(0.5, 0.5)
-shader_parameter/polar_zoom = 1.4
-shader_parameter/polar_repeat = 2.0
-shader_parameter/spin_rotation = 7.0
-shader_parameter/spin_speed = 6.0
+shader_parameter/polar_zoom = 1.27
+shader_parameter/polar_repeat = 10.145
+shader_parameter/spin_rotation = 7.275
+shader_parameter/spin_speed = 2.12
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/colour_1 = Color(0.1570867, 0, 0.01630615, 1)
-shader_parameter/colour_2 = Color(0.0740867, 0, 1.1486518, 1)
-shader_parameter/colour_3 = Color(0.92941177, 0, 0, 1)
-shader_parameter/contrast = 2.0
-shader_parameter/spin_amount = 0.15
+shader_parameter/colour_2 = Color(0.056466244, 0, 0.9853328, 1)
+shader_parameter/colour_3 = Color(0.45648023, 0, 0, 1)
+shader_parameter/contrast = 0.005
+shader_parameter/spin_amount = 0.255
 shader_parameter/pixel_filter = 400.0
 
 [node name="MainMenu" type="Node2D" unique_id=1743697251]
